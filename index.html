@@ -1,1 +1,542 @@
-<h1>Hello from chinu</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinu — IT Engineer & Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(8,8,8,.75);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #888;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #333;
+      padding: 7px 14px;
+      border-radius: 30px;
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(50px, 9vw, 100px);
+      line-height: .95;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #777;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      transition: .2s;
+    }
+
+    .btn.primary {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
+      border-top: 1px solid #181818;
+    }
+
+    .section-title {
+      font-size: 40px;
+      margin-bottom: 45px;
+      letter-spacing: -2px;
+    }
+
+    .section-title span {
+      color: #666;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .about p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .fact {
+      border: 1px solid #252525;
+      padding: 20px;
+      border-radius: 12px;
+      background: #0d0d0d;
+    }
+
+    .fact small {
+      color: #666;
+    }
+
+    .fact strong {
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      border: 1px solid #2b2b2b;
+      padding: 10px 16px;
+      border-radius: 30px;
+      color: #bbb;
+      background: #0c0c0c;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      padding: 30px;
+      border: 1px solid #252525;
+      border-radius: 15px;
+      background: linear-gradient(145deg,#111,#090909);
+      transition: .25s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #444;
+    }
+
+    .project-number {
+      color: #555;
+      font-size: 13px;
+    }
+
+    .project h3 {
+      margin: 15px 0 10px;
+      font-size: 24px;
+    }
+
+    .project p {
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .tech {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    /* FOOTBALL */
+    .football {
+      border: 1px solid #252525;
+      border-radius: 18px;
+      padding: 35px;
+      background: #0d0d0d;
+    }
+
+    .football h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .football p {
+      color: #999;
+      max-width: 700px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 7vw, 75px);
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      border-top: 1px solid #181818;
+      padding: 25px 0;
+      color: #555;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media(max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .about,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Chinu<span>.</span></div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="tag">B.E. Information Technology · Developer</div>
+
+          <h1>
+            Hi, I'm <span>Chinu.</span><br>
+            I build things.
+          </h1>
+
+          <p>
+            I'm an Information Technology engineering student who enjoys
+            building projects, learning new technologies, solving problems
+            and occasionally scoring goals on the football field.
+          </p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+
+        <h2 class="section-title">About <span>me.</span></h2>
+
+        <div class="about">
+
+          <div>
+            <p>
+              I'm currently pursuing B.E. in Information Technology.
+              I'm interested in software development, web development,
+              artificial intelligence and problem solving.
+            </p>
+
+            <br>
+
+            <p>
+              I like learning by actually building things — from small
+              Python programs and websites to AI-powered applications.
+            </p>
+          </div>
+
+          <div class="facts">
+
+            <div class="fact">
+              <small>Education</small>
+              <strong>B.E. Information Technology</strong>
+            </div>
+
+            <div class="fact">
+              <small>Focus</small>
+              <strong>Software Development</strong>
+            </div>
+
+            <div class="fact">
+              <small>Learning</small>
+              <strong>DSA · Web · AI</strong>
+            </div>
+
+            <div class="fact">
+              <small>Based in</small>
+              <strong>Mumbai, India</strong>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+
+        <h2 class="section-title">My <span>skills.</span></h2>
+
+        <div class="skills">
+          <div class="skill">C++</div>
+          <div class="skill">Python</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">React</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">Express</div>
+          <div class="skill">Git</div>
+          <div class="skill">GitHub</div>
+          <div class="skill">DSA</div>
+          <div class="skill">Supabase</div>
+          <div class="skill">AI / LLMs</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+
+        <h2 class="section-title">Selected <span>projects.</span></h2>
+
+        <div class="projects">
+
+          <div class="project">
+            <div class="project-number">01</div>
+            <h3>REVERSE.ENG</h3>
+            <p>
+              An Agentic AI tool that lets developers ingest a GitHub
+              repository and chat with their codebase.
+            </p>
+            <div class="tech">
+              React · Vite · Node · Express · Supabase · Gemini
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-number">02</div>
+            <h3>Portfolio</h3>
+            <p>
+              A personal developer portfolio designed to showcase
+              projects, skills and experience.
+            </p>
+            <div class="tech">
+              HTML · CSS · JavaScript
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-number">03</div>
+            <h3>Rock Paper Scissors</h3>
+            <p>
+              A simple interactive game created while learning Python
+              programming fundamentals.
+            </p>
+            <div class="tech">
+              Python
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-number">04</div>
+            <h3>More Coming...</h3>
+            <p>
+              Currently learning, experimenting and building new things.
+            </p>
+            <div class="tech">
+              🚀 In progress
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTBALL -->
+    <section>
+      <div class="container">
+
+        <h2 class="section-title">Beyond <span>code.</span></h2>
+
+        <div class="football">
+          <h3>⚽ Football</h3>
+
+          <p>
+            When I'm not coding, you'll probably find me playing football.
+            I'm a Real Madrid fan and have been following the club since
+            2017. Football is my favourite way to switch off from tech.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <h2>Let's build<br>something.</h2>
+
+        <p>
+          Have an idea, project or just want to connect?
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+          <a href="mailto:your@email.com" class="btn primary">
+            Email Me
+          </a>
+
+          <a href="https://github.com/" target="_blank" class="btn">
+            GitHub
+          </a>
+
+          <a href="https://linkedin.com/" target="_blank" class="btn">
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Chinu. Built with HTML, CSS & JavaScript.
+    </div>
+  </footer>
+
+</body>
+</html>
